@@ -1,67 +1,51 @@
 package model;
 
-import java.io.Serializable;
+public class User {
+	protected int id;
+	protected String name;
+	protected String email;
+	protected String city;
+	
+	public User() {
+	}
+	
+	public User(String name, String email, String city) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.city = city;
+	}
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+	public User(int id, String name, String email, String city) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.city = city;
+	}
 
-@Entity
-@Table( name = "register")
-public class User implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "emailId")
-	private String emailId;
-	
-	@Column(name = "phoneNo")
-	private String phoneNo;
-	
-	@Column(name = "password")
-	private String password;
-
-
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getEmailId() {
-		return emailId;
+	public String getEmail() {
+		return email;
 	}
-
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
-	public String getPhoneNo() {
-		return phoneNo;
+	public String getCity() {
+		return city;
 	}
-
-	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
+	public void setCity(String city) {
+		this.city = city;
 	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
 }
